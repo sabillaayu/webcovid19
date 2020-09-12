@@ -23,18 +23,21 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Beranda <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="<?=base_url('Beranda')?>">Beranda <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Edukasi</a>
+        <a class="nav-link" href="<?=base_url('Chart')?>">Grafik</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Lapor</a>
+        <a class="nav-link" href="<?=base_url('Edukasi')?>">Edukasi</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?=base_url('Laporan')?>">Lapor</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Informasi Rapid</a>
       </li>
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Data
         </a>
@@ -44,7 +47,7 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Grafik Persebaran</a>
         </div>
-      </li>
+      </li> -->
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

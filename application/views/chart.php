@@ -61,7 +61,7 @@
 <style>
 body {  
   /* background: #1D1F20; */
-  padding: 16px;
+  /* padding: 16px; */
 }
 
 canvas {

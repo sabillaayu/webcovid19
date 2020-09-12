@@ -9,28 +9,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         #box1{
-				width:150px;
-				height:150px;
-				background:green;
+				width:250px;
+				height:200px;
+                color: white;
+				background:red;
+                margin: 90px;
+                padding: 12px;
+                text-align: center;
         }
         #box2{
-				width:150px;
-				height:150px;
-				background:green;
+				width:250px;
+				height:200px;
+				background:#00FF00	;
+                color: white;
+                margin: 90px;
+                padding: 12px;
+                text-align: center;
+
         }
         #box3{
-				width:150px;
-				height:150px;
-				background:green;
+				width:250px;
+				height:200px;
+				background: darkgrey;
+                color: white;
+                margin: 90px;
+                padding: 12px;
+                text-align: center;
+
+        }
+        a {
+            text-align: center;
         }
 
     </style>
 </head>
 <body>
-    <div style="width:100%; height:500px; background-color: black;">
-        <div id="box1">Meninggal</div>
-        <div id="box2">Sembuh</div>
-        <div id="box3">Positif</div>
+    <div class="row" style="width:100%; height:500px; background-color: black; font-size: 30px;">
+        <div id="box1"> <br><a> Meninggal</a> <br></div>
+        <div id="box2"> <br><a>Sembuh</a> <br></div>
+        <div id="box3"> <br><a>Perawatan</a> <br></div>
     </div>
 
     <div id="tabel"></div>
@@ -40,6 +57,7 @@
     // const url = 'https://covid19.mathdro.id/api/countries/IDN';
     // const url = 'https://api.kawalcorona.com/indonesia/provinsi' 
     const url = 'https://indonesia-covid-19.mathdro.id/api/provinsi'
+    const url_today = 'https://indonesia-covid-19.mathdro.id/api'
     // axios.get(url, {
     //     headers: {"Access-Control-Allow-Origin": "http://localhost"}
     // })
@@ -49,14 +67,20 @@
 	// .catch(function (error) {
 	// 	console.log(error);
 	// });
+    $.get(url_today, function(data, status){
+        console.log(data)
+        $('#box1').append(data.meninggal)
+        $('#box2').append(data.sembuh)
+        $('#box3').append(data.perawatan)
+    });
     $.get(url, function(data, status){
     // alert("Data: " + data + "\nStatus: " + status);
-    console.log(data.data)
+    // console.log(data.data)
     let dt = []
     data.data.forEach((e, i) =>{
         dt.push(
     `<tr>
-      <th>${i}</th>
+      <th>${i+1}</th>
       <th>${e.provinsi}</th>
       <td>${e.kasusPosi}</td>
       <td>${e.kasusSemb}</td>

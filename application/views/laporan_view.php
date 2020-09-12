@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <form role="form " method="post" action="<?=base_url('insertLaporan')?>" class="container-fluid col-5" style="margin-top: 50px;">
+    <form role="form " method="post" action="<?=base_url('Laporan/insertLaporan')?>" class="container-fluid col-5" style="margin-top: 50px;">
+
+
+    <?php if($this->session->flashdata('notif')!=null): ?>
+        <div class="alert alert-success">
+        <?= $this->session->flashdata('notif');?>
+        </div>
+        <?php endif?>
+
     <h3 CLASS="text-center">LAPOR SIGAP COVID</h3>
     <div class="mt-5">
         <div class="form-row">
@@ -30,7 +38,7 @@
         </div>
         <div class="form-group">
           <label for="inputAddress2">Alamat</label>
-          <input type="text" class="form-control" name="Address" id="inputAddress2" placeholder="Jalan Rumah, No rumah, Apartemen">
+          <input type="text" class="form-control" name="address" id="inputAddress2" placeholder="Jalan Rumah, No rumah, Apartemen">
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
