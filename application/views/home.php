@@ -44,12 +44,16 @@
     </style>
 </head>
 <body>
-    <div class="row" style="width:100%; height:500px; background-color: black; font-size: 30px;">
+<h1 style="color: white; text-align: center; background: black">UPDATE COVID-19</h1>
+
+    <div class="row" style="height:500px; background-color: black; font-size: 30px;">
         <div id="box1"> <br><a> Meninggal</a> <br></div>
         <div id="box2"> <br><a>Sembuh</a> <br></div>
         <div id="box3"> <br><a>Perawatan</a> <br></div>
     </div>
-
+    <br> <br> <br>
+        <h2 style="text-align: center">Data COVID-19 Provinsi di Indonesia</h2>
+        <br> <br> <br>
     <div id="tabel"></div>
 
     <script>
@@ -77,8 +81,9 @@
     // alert("Data: " + data + "\nStatus: " + status);
     // console.log(data.data)
     let dt = []
-    data.data.forEach((e, i) =>{
-        dt.push(
+    data.data.forEach((e, i) =>
+    {
+    dt.push(
     `<tr>
       <th>${i+1}</th>
       <th>${e.provinsi}</th>
